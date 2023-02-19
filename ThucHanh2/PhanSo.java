@@ -117,7 +117,6 @@ public class PhanSo {
 	}
 
 
-	//ham cong hai phan so
 	// public PhanSo congPhanSo(PhanSo x)
 	// {
 
