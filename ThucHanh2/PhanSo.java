@@ -166,8 +166,8 @@ public class PhanSo {
 
 	public PhanSo congPhanSo(PhanSo x)
 	{
-		int new_tu_so = this.tu_so * x.mau_so + this.mau_so * x.tu_so;
-		int new_mau_so = this.mau_so * x.mau_so;
+		int new_tu_so = ((this.tu_so * x.mau_so) + (this.mau_so * x.tu_so));
+		int new_mau_so = (this.mau_so * x.mau_so);
 
 		PhanSo result = new PhanSo(new_tu_so, new_mau_so);
 		result.rutGonPhanSo();
@@ -222,51 +222,4 @@ public class PhanSo {
 		result.rutGonPhanSo();
 		return result;
 	}
-
-	public static void main(String[] args) {
-		PhanSo a = new PhanSo();
-		a.nhapPhanSo();
-		System.out.println("Gia tri thuc cua phan so la: " + a.giaTriThuc());		
-		a.rutGonPhanSo();
-		
-
-		PhanSo reserve = a.giaTriNghichDao();
-		a.nghichDao();
-		System.out.print("Gia tri cua phan so a sau khi rut gon la: ");	
-		a.hienThi();
-		System.out.println();
-		System.out.print("Gia tri cua phan so nghich dao cua a sau khi rut gon la: ");	
-		reserve.hienThi();
-
-
-		// PhanSo b = new PhanSo(4, 5);
-
-		// System.out.println();
-		// PhanSo c = a.chiaPhanSo(b);
-		// System.out.print("Thuong cua ");
-		// a.hienThi();
-		// System.out.print(" va ");
-		// b.hienThi();
-		// System.out.print(" la: ");
-		// c.hienThi();
-
-
-		// PhanSo b = new PhanSo(4, 6);
-		
-		// if (a.lonHon(b))
-		// {
-		// 	System.out.print("Phan so ");
-		// 	a.hienThi();
-		// 	System.out.print(" lon hon phan so ");
-		// 	b.hienThi();
-		// }
-		// else
-		// {
-		// 	System.out.print("Phan so ");
-		// 	a.hienThi();
-		// 	System.out.print(" nho hon phan so ");
-		// 	b.hienThi();
-		// }
-	}
-
 }
