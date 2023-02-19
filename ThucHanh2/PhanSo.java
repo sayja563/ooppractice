@@ -13,6 +13,12 @@ public class PhanSo {
 		this.tu_so = tu_so;
 		this.mau_so = mau_so;
 	}
+
+	public void setPhanSo(int tu_so, int mau_so)
+	{
+		this.tu_so = tu_so;
+		this.mau_so = mau_so;
+	}
 	
 	public void hienThi()
 	{
@@ -84,25 +90,66 @@ public class PhanSo {
 		return (this.tu_so * a.mau_so) > (this.mau_so * a.tu_so);
 	}
 
-	public int uocChungLonNhat(int a, int b)
+	public void nghichDao()
+	{
+		this.setPhanSo(this.mau_so, this.tu_so);
+	}
+
+	public PhanSo giaTriNghichDao()
+	{
+		PhanSo result = new PhanSo(this.mau_so, this.tu_so);
+		return result;
+	}
+
+	public static int uocChungLonNhat(int a, int b)
 	{		
 		int ucln = 0;
-		while(ucln != 0)
+		if ((a * b) < 0)
+		{
+			if (a < 0)
+			{
+				a = -a;
+			}
+			else 
+			{
+				b = -b;
+			}
+		}
+		else {
+			if (a < 0)
+			{
+				a = -a;
+				b = -b;
+			}
+		}
+
+		while (ucln == 0)
 		{	
-			if (a % b == 0)
-				ucln = b;
-			if (b % a == 0)
-				ucln = a;
-			
 			if (a > b)
 			{
-				b = a % b;
-				a /= b;
+				if (a % b != 0)
+				{
+					int temp = b;
+					b = a % b;
+					a = temp;
+				}
+				else 
+				{
+					 ucln = b;
+				}
 			}
-			if (a < b)
+			else 
 			{
-				a = b % a;
-				b /= a;
+				if (b % a != 0)
+				{
+					int temp = a;
+					a = b % a;
+					b = temp;
+				}
+				else 
+				{
+					ucln = a;
+				}
 			}
 		}
 
@@ -117,18 +164,92 @@ public class PhanSo {
 	}
 
 
-	// public PhanSo congPhanSo(PhanSo x)
-	// {
+	public PhanSo congPhanSo(PhanSo x)
+	{
+		int new_tu_so = this.tu_so * x.mau_so + this.mau_so * x.tu_so;
+		int new_mau_so = this.mau_so * x.mau_so;
 
-	// }
+		PhanSo result = new PhanSo(new_tu_so, new_mau_so);
+		result.rutGonPhanSo();
+		return result;
+	}
+
+	public PhanSo congPhanSo(int x)
+	{
+		int new_tu_so = (x * this.mau_so) + this.tu_so;
+		PhanSo result = new PhanSo(new_tu_so, this.mau_so);
+		result.rutGonPhanSo();
+		return result;
+	}
+
+	public PhanSo truPhanSo(PhanSo x)
+	{
+		PhanSo temp = new PhanSo(-x.tu_so, x.mau_so);
+		PhanSo result = this.congPhanSo(temp);
+		return result;
+	}
+
+	public PhanSo truPhanSo(int x)
+	{
+		PhanSo result = this.congPhanSo(-x);
+		return result;
+	}
+
+	public PhanSo nhanPhanSo(PhanSo x)
+	{
+		PhanSo result = new PhanSo(this.tu_so * x.tu_so, this.mau_so * x.mau_so);
+		result.rutGonPhanSo();
+		return result;
+	}
+
+	public PhanSo nhanPhanSo(int x)
+	{
+		PhanSo result = new PhanSo(this.tu_so * x, this.mau_so);
+		result.rutGonPhanSo();
+		return result;
+	}
+
+	public PhanSo chiaPhanSo(PhanSo x)
+	{
+		PhanSo result = new PhanSo(this.tu_so * x.mau_so, this.mau_so * x.tu_so);
+		result.rutGonPhanSo();
+		return result;
+	}
+
+	public PhanSo chiaPhanSo(int x)
+	{
+		PhanSo result = new PhanSo(this.tu_so, this.mau_so * x);
+		result.rutGonPhanSo();
+		return result;
+	}
 
 	public static void main(String[] args) {
 		PhanSo a = new PhanSo();
 		a.nhapPhanSo();
 		System.out.println("Gia tri thuc cua phan so la: " + a.giaTriThuc());		
 		a.rutGonPhanSo();
-		System.out.println("Gia tri thuc cua phan so sau khi rut gon la: ");	
+		
+
+		PhanSo reserve = a.giaTriNghichDao();
+		a.nghichDao();
+		System.out.print("Gia tri cua phan so a sau khi rut gon la: ");	
 		a.hienThi();
+		System.out.println();
+		System.out.print("Gia tri cua phan so nghich dao cua a sau khi rut gon la: ");	
+		reserve.hienThi();
+
+
+		// PhanSo b = new PhanSo(4, 5);
+
+		// System.out.println();
+		// PhanSo c = a.chiaPhanSo(b);
+		// System.out.print("Thuong cua ");
+		// a.hienThi();
+		// System.out.print(" va ");
+		// b.hienThi();
+		// System.out.print(" la: ");
+		// c.hienThi();
+
 
 		// PhanSo b = new PhanSo(4, 6);
 		
