@@ -116,6 +116,8 @@ public class PhanSo {
 		this.mau_so /= ucln;
 	}
 
+
+	//ham cong hai phan so
 	// public PhanSo congPhanSo(PhanSo x)
 	// {
 
