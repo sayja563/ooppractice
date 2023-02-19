@@ -36,7 +36,7 @@ public class PhanSo {
 		}
 	}
 	
-	public int getValue()
+	public static int getValue()
 	{
 		Scanner sc = new Scanner(System.in);
 		String input;
