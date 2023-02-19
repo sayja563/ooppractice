@@ -5,6 +5,7 @@ public class SDPhanSo {
 
         System.out.print("Gia tri cua phan so a la: ");	
 		a.hienThi();
+        System.out.println();
         System.out.print("Gia tri cua phan so b la: ");	
 		b.hienThi();
     }
