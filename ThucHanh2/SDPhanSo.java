@@ -1,4 +1,4 @@
-package ooppractice.ThucHanh2;
+package ooppractice.thuchanh2;
 
 public class SDPhanSo {
 

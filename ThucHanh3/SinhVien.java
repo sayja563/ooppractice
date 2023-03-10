@@ -1,6 +1,9 @@
-package ooppractice.ThucHanh3;
+package ooppractice.thuchanh3;
 
-import ooppractice.ThucHanh2.Date;
+import java.util.Scanner;
+
+import ooppractice.thuchanh2.Date;
+
 
 public class SinhVien {
 	
@@ -45,9 +48,70 @@ public class SinhVien {
 		}
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static String getString()
+    {             
+    	Scanner sc = new Scanner(System.in);
+        String input;
+        String value = "";        
+        do
+        {	
+        	value = sc.nextLine();
+        } while (value.length() <= 0);
 
+        return value;
+    }
+
+    public static int getInt()
+    {
+    	Scanner sc = new Scanner(System.in);
+        String input;
+        int value = 0;           
+        do 
+        {
+            try
+            {
+            	input = sc.nextLine();
+                value = Integer.parseInt(input);
+            }
+            catch (Exception e)
+            {
+                System.out.println("Loi nhap lieu. Moi nhap lai.");
+            }
+            
+        } while (value == 0);
+
+        return value;
+    }
+
+
+	public void nhapThongTin()
+	{
+		System.out.printf("Nhap Ma So Sinh Vien: ");
+		this.id = getString();
+		System.out.printf("Nhap Ho Ten Sinh Vien: ");
+		this.ten = getString();
+		System.out.printf("Nhap Ngay Sinh: ");
+		this.ngay_sinh.getDate();
+		System.out.printf("Nhap So Luong Hoc Phan Cua Sinh Vien: ");
+		this.so_hp = getInt();
+
+		System.out.printf("Nhap Ten Hoc Phan: \n");
+		for (int i = 0; i < this.so_hp; i++)
+		{
+			System.out.printf("Hoc phan thu %d: ", i+1);
+			ten_hp[i] = getString();
+		}
+
+		for (int i = 0; i < this.so_hp; i++)
+		{
+			System.out.printf("Nhap diem cua hoc phan %s: ", ten_hp[i]);
+			diem[i] = getString();
+		}
+	}
+
+	public static void main(String[] args) {
+		SinhVien s = new SinhVien();
+		s.nhapThongTin();
 	}
 
 }

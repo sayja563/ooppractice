@@ -1,4 +1,4 @@
-package ooppractice.ThucHanh3;
+package ooppractice.thuchanh3;
 
 import java.util.Scanner;
 
