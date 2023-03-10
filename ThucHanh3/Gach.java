@@ -1,3 +1,5 @@
+package ooppractice.ThucHanh3;
+
 import java.util.Scanner;
 
 public class Gach {
@@ -5,9 +7,6 @@ public class Gach {
     private String color;
     private int quantity, width, length;
     private long price;
-
-    private static Scanner sc = new Scanner(System.in);
-    private static String input;
 
     public Gach()
     {
@@ -38,26 +37,40 @@ public class Gach {
         this.length = gach.length;
         this.price = gach.price;
     }
+    
+    public long getPrice()
+    {
+    	return this.price;
+    }
+    
+    public String getID()
+    {
+    	return this.id;
+    }
 
     public static String getString()
-    {               
-        String value = "";
-        
-        do{
-            value = sc.nextLine();
-        } while (value == "");
+    {             
+    	Scanner sc = new Scanner(System.in);
+        String input;
+        String value = "";        
+        do
+        {	
+        	value = sc.nextLine();
+        } while (value.length() <= 0);
 
         return value;
     }
 
     public static int getInt()
     {
-        int value = 0;       
-        input = sc.nextLine();
+    	Scanner sc = new Scanner(System.in);
+        String input;
+        int value = 0;           
         do 
         {
             try
             {
+            	input = sc.nextLine();
                 value = Integer.parseInt(input);
             }
             catch (Exception e)
@@ -66,19 +79,20 @@ public class Gach {
             }
             
         } while (value == 0);
-        //sc.close();        
 
         return value;
     }
 
     public static long getLong()
     {
-        long value = 0;  
-        input = sc.next();
+    	Scanner sc = new Scanner(System.in);
+        String input;
+        long value = 0;        
         do 
         {
             try
             {
+            	input = sc.next();
                 value = Long.parseLong(input);
             }
             catch (Exception e)
@@ -87,43 +101,42 @@ public class Gach {
             }
             
         } while (value == 0);
-        //sc.close();        
 
         return value;
     }
 
     public void getInfor()
     {
-        System.out.print("Enter Box ID: ");
+        System.out.print("Nhap ID: ");
         this.id = getString();
 
-        System.out.print("Enter Brick Color: ");
+        System.out.print("Nhap mau gach: ");
         this.color = getString();
 
-        System.out.print("Enter number of bricks in the box: ");
+        System.out.print("Nhap so luong gach trong hop: ");
         this.quantity = getInt();
 
-        System.out.print("Enter Brick Width (cm): ");
+        System.out.print("Nhap chieu rong cua gach (cm): ");
         this.width = getInt();
 
-        System.out.print("Enter Brick Length (cm): ");
+        System.out.print("Nhap chieu dai cua gach (cm): ");
         this.length = getInt();
 
-        System.out.print("Enter Price of Box (vnd): ");
+        System.out.print("Nhap gia cua hop gach (vnd): ");
         this.price = getLong();
     }
 
     public void showInfor()
     {
         System.out.println();
-        System.out.println("================= BRICK BOX =================");
-        System.out.printf("| Box ID: %33s |\n", this.id);
-        System.out.printf("| Brick color: %28s |\n", this.color);
-        System.out.printf("| The number of bricks in the box: %8d |\n", this.quantity);
-        System.out.printf("| Brick width(cm): %24d |\n", this.width);
-        System.out.printf("| Brick length(cm): %23d |\n", this.length);
-        System.out.printf("| Price of the box(vnd): %18d |\n", this.price);
-        System.out.println("=============================================");
+        System.out.println("|================== GACH ===================|");
+        System.out.printf("| ID: %37s |\n", this.id);
+        System.out.printf("| Mau gach: %31s |\n", this.color);
+        System.out.printf("| So luong gach trong hop: %16d |\n", this.quantity);
+        System.out.printf("| Chieu rong gach(cm): %20d |\n", this.width);
+        System.out.printf("| Chieu dai gach(cm): %21d |\n", this.length);
+        System.out.printf("| Gia (vnd): %30d |\n", this.price);
+        System.out.println("|===========================================|");
     }
 
     public float giaBanLe()

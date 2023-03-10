@@ -1,4 +1,4 @@
-//package oop-practice.ThucHanh3;
+package ooppractice.ThucHanh3;
 
 public class SDGach {
     public static void showMinCost(Gach dsGach[], int n)
@@ -14,6 +14,14 @@ public class SDGach {
 
         min_cost.showInfor();
     }
+    
+    public static float costForArea(Gach gach, int i, int j) {
+		float result = 0;
+		result = gach.soLuongHop(i, j) * gach.getPrice();
+		
+		return result;
+	}
+    
     public static void main(String[] args) {
         int n;
         System.out.print("Nhap n: ");
@@ -26,7 +34,7 @@ public class SDGach {
             dsGach[i].getInfor();
         }
         
-        System.out.printf("\nTrong mang co %d phan tu.", n);
+        System.out.printf("\nCo %d loai gach duoc nhap.", n);
         for (int i = 0; i < n; i++)
         {
             dsGach[i].showInfor();
@@ -34,5 +42,11 @@ public class SDGach {
 
         System.out.printf("\nLoai gach co chi phi lot thap nhat la:\n");
         showMinCost(dsGach, n);
+        
+        for (int i = 0; i < n; i++)
+        {
+        	System.out.printf("Chi phi mua gach de lot phan nen 5 x 20 cua loai gach %s la %.3f.\n", dsGach[i].getID(), costForArea(dsGach[i], 5, 20));
+        }            
     }
+	
 }

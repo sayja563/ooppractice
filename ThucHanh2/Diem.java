@@ -1,3 +1,5 @@
+package ooppractice.ThucHanh2;
+
 import java.util.Scanner;
 
 public class Diem {

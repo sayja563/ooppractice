@@ -1,3 +1,5 @@
+package ooppractice.ThucHanh2;
+
 public class SDDate {
     public static void main(String[] args) {
 		

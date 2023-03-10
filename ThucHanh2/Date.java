@@ -1,3 +1,5 @@
+package ooppractice.ThucHanh2;
+
 import java.util.Scanner;
 
 public class Date {
@@ -15,6 +17,13 @@ public class Date {
 		this.day = day;
 		this.month = month;
 		this.year = year;
+	}
+	
+	public Date(Date d)
+	{
+		this.day = d.day;
+		this.month = d.month;
+		this.year = d.year;
 	}
 	
 	public void SetDate(int day, int month, int year)

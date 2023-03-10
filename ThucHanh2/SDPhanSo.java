@@ -1,3 +1,5 @@
+package ooppractice.ThucHanh2;
+
 public class SDPhanSo {
 
     public static PhanSo tongMang(PhanSo mangPhanSo[], int n)

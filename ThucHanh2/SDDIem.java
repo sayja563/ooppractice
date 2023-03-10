@@ -1,3 +1,5 @@
+package ooppractice.ThucHanh2;
+
 public class SDDIem {
     public static void main(String[] args) {
 		// TODO Auto-generated method stub
