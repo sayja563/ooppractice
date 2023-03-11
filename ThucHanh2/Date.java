@@ -155,9 +155,4 @@ public class Date {
 		
 		return new_date;
 	}
-
-	public static void main(String[] args) {
-		Date d = new Date(5, 6, 2003);
-		d.printDate();
-	}
 }

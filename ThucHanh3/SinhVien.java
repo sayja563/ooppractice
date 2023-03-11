@@ -14,7 +14,14 @@ public class SinhVien {
 	private String[] ten_hp;
 	private String[] diem;
 	
-	public SinhVien() {}
+	public SinhVien() {
+		this.id = "";
+		this.ten = "";
+		this.ngay_sinh = new Date();
+		this.so_hp = 0;
+		this.ten_hp = null;
+		this.diem = null;
+	}
 	
 	public SinhVien(String id, String ten, Date ngay_sinh, int so_hp, String[] ten_hp, String[] diem)
 	{
@@ -96,12 +103,14 @@ public class SinhVien {
 		this.so_hp = getInt();
 
 		System.out.printf("Nhap Ten Hoc Phan: \n");
+		this.ten_hp = new String[so_hp];
 		for (int i = 0; i < this.so_hp; i++)
 		{
 			System.out.printf("Hoc phan thu %d: ", i+1);
 			ten_hp[i] = getString();
 		}
 
+		this.diem = new String[so_hp];
 		for (int i = 0; i < this.so_hp; i++)
 		{
 			System.out.printf("Nhap diem cua hoc phan %s: ", ten_hp[i]);
@@ -113,5 +122,4 @@ public class SinhVien {
 		SinhVien s = new SinhVien();
 		s.nhapThongTin();
 	}
-
 }
