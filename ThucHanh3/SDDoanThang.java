@@ -14,7 +14,7 @@ public class SDDoanThang {
 		DoanThang cd = new DoanThang();
 		cd.nhapToaDo();
 		cd.hienThiDoanThang();
-		System.out.printf("Goc giua CD va truc hoanh la %.2f.\n", cd.gocVsTrucHoanh());
+		System.out.printf("Goc giua CD va truc hoanh la %.2f do.\n", cd.gocVsTrucHoanh());
 
 	}
 

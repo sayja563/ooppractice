@@ -8,11 +8,11 @@ public class SDDate {
 		Date date = new Date();
 		date.getDate();
 		System.out.print("Ngay: ");
-		date.printDate();
+		System.out.printf(date.printDate());
 		System.out.println();
 		Date next_day = date.homSau();
 		System.out.print("Ngay hom sau la: ");
-		next_day.printDate();
+		System.out.printf(next_day.printDate());
 		System.out.println("\n");
 		
 		
@@ -20,7 +20,7 @@ public class SDDate {
 		if (date_2.hopLe())
 		{
 			System.out.print("Ngay ");
-			date_2.printDate();
+			System.out.printf(date_2.printDate());
 			System.out.println(" hop le.");
 			
 

@@ -33,9 +33,9 @@ public class Date {
 		this.year = year;
 	}
 	
-	public void printDate()
+	public String printDate()
 	{
-		System.out.print(this.day + "/" + this.month + "/" + this.year);
+		return this.day + "/" + this.month + "/" + this.year;
 	}
 	
 	public int getValue()
